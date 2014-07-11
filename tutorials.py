@@ -65,5 +65,6 @@ idea5 = Ideas('Test Driven Development',
 idea6 = Ideas('2D Visualizations',
               'matplotlib',
               )
+
 # -- Keep Track --
 idea_list = {i_idea.name: i_idea for i_idea in Ideas.all_idea} 
