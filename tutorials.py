@@ -14,8 +14,9 @@ class Ideas(object):
         resource: any resources supporting/elaborating the idea
 
     Methods:
-        Ideas.display_all_idea(): Shows all ideas
-
+        Ideas.get_all_idea(): Shows all ideas
+        Ideas.get_schedule(): Shows schedule with ideas
+        Ideas.get_idea('name of idea'): Access the object associated with that idea  
     """
 
     all_idea = []
@@ -30,23 +31,34 @@ class Ideas(object):
         return self.name
 
     @staticmethod
-    def display_all_idea():
-        return idea_list.keys()
+    def get_all_idea():
+        return idea_dict.keys()
+
+    @staticmethod
+    def get_schedule():
+        date_list = schedule_dict.keys()
+        date_list.sort()
+        schedule_list = [(i_date, schedule_dict[i_date]) for i_date in date_list]
+        return schedule_list
+
+    @staticmethod
+    def get_idea(idea_name):
+        return idea_dict[idea_name]
 
     def __str__(idea):
         return "Name: {idea.name} \nDescription: {idea.description} \nDate: {idea.date} \nResource: {idea.resource}".format(idea=idea)
 
 
-# -- Data --
+# -- Populating Database --
 idea1 = Ideas('IPython',
               'IPython basics, Tab Completion, Introspection', 
-              '7-14-2014',
+              '20140716',
               'Python for Data Analysis',
               )
 
 idea2 = Ideas('Text Editors',
               'Vim, Emacs, Sublime Text, Textmate',
-              '7-16-2014',
+              '20140714',
               None,
               )
 
@@ -67,4 +79,5 @@ idea6 = Ideas('2D Visualizations',
               )
 
 # -- Keep Track --
-idea_list = {i_idea.name: i_idea for i_idea in Ideas.all_idea} 
+idea_dict = {i_idea.name: i_idea for i_idea in Ideas.all_idea} 
+schedule_dict = {i_idea.date: i_idea for i_idea in Ideas.all_idea}
