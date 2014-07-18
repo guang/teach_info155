@@ -82,6 +82,10 @@ idea7 = Ideas('Python Idioms',
              'list and dict comprehensions',
              '20140725',
              )
+
+idea8 = Ideas('pandas',
+             'data analysis with pandas',
+             '20140727',
 # -- Keep Track --
 idea_dict = {i_idea.name: i_idea for i_idea in Ideas.all_idea} 
 schedule_dict = {i_idea.date: i_idea for i_idea in Ideas.all_idea}
