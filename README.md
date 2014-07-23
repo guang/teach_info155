@@ -14,6 +14,6 @@ Questions/comments to gy8 [at] berkeley [dot] edu
 ###### Week 3: Documenting with Python
 + 2014-07-21: Coding in Style
 
-+ 2014-07-23: Commenting
++ 2014-07-23: Commenting with Docstrings
 
 + 2014-07-25: Doctest
