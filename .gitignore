@@ -2,3 +2,4 @@
 *.swp
 *.key
 *.pyc
+*.ipynb_checkpoints
